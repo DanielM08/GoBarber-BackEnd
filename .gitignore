@@ -3,6 +3,6 @@ build/
 temp/
 .idea/
 .vscode/
-
+coverage/
 tmp/*
 !tmp/.gitkeep
