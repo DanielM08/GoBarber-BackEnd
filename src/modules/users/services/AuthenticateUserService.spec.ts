@@ -51,7 +51,7 @@ describe('AuthenticateUser', () => {
     ).rejects.toBeInstanceOf(AppError);
   });
 
-  it('should be able to authenticate', async () => {
+  it('should not be able to authenticate with incorrect password', async () => {
     const fakeUsersRepository = new FakeUsersRepository();
     const fakeHashProvider = new FakeHashProvider();
 
@@ -73,7 +73,7 @@ describe('AuthenticateUser', () => {
     expect(
       authenticateUserService.execute({
         email: 'email@email.com',
-        password: '12345',
+        password: '123456',
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
