@@ -49,6 +49,7 @@ export default class CreateAppointmentService{
 
     const findAppointmentsInSameDate = await this.appointmentsRepository.findByDate(
       appointmentDate,
+      provider_id,
     );
 
     if(findAppointmentsInSameDate){
